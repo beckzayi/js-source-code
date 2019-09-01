@@ -3,6 +3,21 @@ import render from './render.js';
 
 const root = document.getElementById('root');
 
-const el = createElement('button', { class: 'red' }, 'Click');
+const el1 = createElement('button', { class: 'red' }, 'Click');
 
-render(el, root);
+render(el1, root);
+
+
+/*
+ * tick interval
+*/
+
+const tick = function() {
+    const dateTime = new Date().toLocaleDateString();
+
+    const el2 = createElement('div', { class: 'time' }, dateTime);
+
+    render(el2, document.getElementById('root'))
+};
+
+setInterval(tick, 1000);
